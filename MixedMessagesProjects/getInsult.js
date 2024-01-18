@@ -5,7 +5,7 @@ async function getInsult() {
     const response = await fetch(insultURL);
     const data = await response.json();
     
-    console.log(data.insult);
+    console.log(`\n\nHere's an insult you could use sometime: \n\n${data.insult}\n\n`);
 };
 
-getInsult(); //test function
+module.exports = getInsult;

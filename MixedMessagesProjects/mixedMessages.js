@@ -1,17 +1,22 @@
-// This is the 'landing page' where the functions are imported and called
+//Restarting the landing page for this app, was previously unable to import and export modules.  
 
-// Importing the functions
-const { getInspiration } = require('./getInspiration.js');
-const { getInsult } = require('./getInsult.js');
+//import functions from two modules
 
-// call a random number, if number is odd, run getInsult, if even, run getInspiration
+const getInspiration = require('./getInspirationalQuote.js');
+const getInsult = require('./getInsult.js');
+const getKanyeQuote = require('./whatDidKanyeSay.js');
 
-let randomNum = Math.floor(Math.random()*100);
+//create a function that will randomly select one of the two functions to run
+function chooseFunction () {
+    let random = Math.floor(Math.random()*3);
 
-if (randomNum % 2 === 0) {
-    getInspiration();
-} else {
-    getInsult();
-}
+    if (random === 0) {
+        getInspiration();
+    } else if (random === 1) {
+        getInsult();
+    } else {
+        getKanyeQuote();
+    }
+}; 
 
-
+chooseFunction();

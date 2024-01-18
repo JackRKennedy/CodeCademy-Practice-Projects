@@ -12,7 +12,7 @@ async function getInspiration() {
         .then (data => {
             const body = JSON.stringify(data.quote.body);
             const author = JSON.stringify(data.quote.author);
-            console.log(`A little inspiration for you: ${body} - ${author}`);
+            console.log(`\n\nA little inspiration for you: \n\n${body} - ${author}\n\n`);
         })
 
         .catch(error => {
@@ -20,4 +20,4 @@ async function getInspiration() {
         })
     }; 
 
-getInspiration(); //test function
+module.exports = getInspiration;
