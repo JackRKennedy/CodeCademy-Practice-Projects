@@ -8,7 +8,10 @@ This repository contains a collection of coding projects that I am completing to
 
 1. Project 1: Mixed Message Generator
     - Description: Generating Mixed Messages with each program
-    - Using API's to get multiple messages such as inspirational quotes or fun facts etc 
+    - Using API's to get multiple messages
+    - Working messages so far include a random Kanye West Quote, Evil Insult or Inspirational Quote - Happy with my interaction with API's and JSON for beginner projects, so might move on.
+
+    - Idea to expands would be to display one insult/quote etc as a paragraph in DOM on personal website, plan to play aroudn with that soon.
 ...
 
 ## Getting Started
