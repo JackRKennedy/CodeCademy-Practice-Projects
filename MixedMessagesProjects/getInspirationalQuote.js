@@ -1,23 +1,23 @@
-const getInspiration = () => {
+async function getInspiration() {
     let quote_id = Math.floor(Math.random()*1000);
 
-    const quoteAPI = `https://favqs.com/api/quotes/${quote_id}`;
-
-    fetch(quoteAPI)
-        .then(response => { // Add a semicolon here
+    //const quoteAPI = `https://favqs.com/api/quotes/:${quote_id}`;
+    const quoteOfTheDayAPI = await 'https://favqs.com/api/qotd';
+    fetch(quoteOfTheDayAPI)
+        .then(response => { 
             if (response.ok) {
                 return response.json();
             }
         })
         .then (data => {
-            let {body, author} = data.quote; // this is the author and body of the quote
+            const body = JSON.stringify(data.quote.body);
+            const author = JSON.stringify(data.quote.author);
+            console.log(`A little inspiration for you: ${body} - ${author}`);
         })
 
         .catch(error => {
             console.error(error);
-        });
+        })
+    }; 
 
-        console.log(`A little inspiration for you: ${body} - ${author}`);
-    }
-
-export default getInspiration;
+getInspiration(); //test function

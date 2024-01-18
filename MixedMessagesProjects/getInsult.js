@@ -1,32 +1,11 @@
-const getInsult = () => {// Define the API endpoint URL
-const apiUrl = 'https://evilinsult.com/generate_insult.php?lang=en&type=json';
+//testing console out and functions in vanilla js
+insultURL = 'https://evilinsult.com/generate_insult.php?lang=en&type=json';
 
-// Define any required headers or authentication tokens
+async function getInsult() {
+    const response = await fetch(insultURL);
+    const data = await response.json();
+    
+    console.log(data.insult);
+};
 
-// Make a request to the API
-fetch(apiUrl)
-    .then(response => {
-        // Handle the response
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Error: ' + response.status);
-        }
-    })
-    .then(data => {
-        // Process the data returned from the API
-        let quote = data.insult;
-    })
-    .catch(error => {
-        // Handle any errors that occurred during the request
-        console.error(error);
-    });
-
-// display the quote
-
-console.log(`I\'ve got one for you: ${quote}`);
-}; 
-
-export default getInsult;
-
-
+getInsult(); //test function
